@@ -4,34 +4,68 @@
 	<head>
 		<meta charset='utf-8'>
 		<meta name='viewport' content='width=device-width,initial-scale=1'>
+		<meta name="author" content="RKDAW Enterprises and Ralph Williamson">
 
-		<title>Svelte app</title>
+		<title>Welcome to RKDAW Enterprises</title>
 
-		<link rel='icon' type='image/png' href='/favicon.png'>
+		<!-- The following is only for debugging. Remove for publication. -->
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<!-- end -->
+
+		<link rel='icon' type='image/vnd.microsoft.icon' href='/favicon.ico'>
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 		<link rel='stylesheet' href='/global.css'>
 		<link rel='stylesheet' href='/build/login_dialog.css'>
 		<link rel='stylesheet' href='/build/main_menu.css'>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<script src='/js/utilities.js'></script>
 
 		<script defer src='/build/login_dialog.js'></script>
 		<script defer src='/build/main_menu.js'></script>
 	</head>
 
 	<body>
+		<div id="loader" class="center"></div>
+
+		<br>
+		<a href="#" class="menu_item_login_button" data-toggle="modal" style="display:none;"></a>
+		<br>
+
 		<div id="login_dialog"></div>
 
 		<div id="main_menu"></div>
 
 		<script>
-			document.addEventListener( "DOMContentLoaded", function ( event ) {
-				login_dialog_component( {
-					target: document.getElementById( "login_dialog" ),
-					props: { name: 'world' }
-				} );
+			document.addEventListener( "DOMContentLoaded", function ( event )
+			{
+				login_dialog_component( { target: document.getElementById( "login_dialog" ) } );
+
 				main_menu_component( {
 					target: document.getElementById( "main_menu" ),
 					props: { name: 'again' }
 				} );
 			} );
 		</script>
+
+		<!-- This places the current date in any element with "todays-date" class attribute. -->
+		<script>todays_date();</script>
+
+		<div style="display: none;"><a href="http://rx4rv.com/gnats.php?article=75623">nonzero-indicative</a></div>
 	</body>
+
+	<footer>
+		<div class=footer>
+			<p>Copyright <span class="material-icons copyright">copyright</span> 2021 RKDAW Enterprises</p>
+		</div>
+	</footer>
 </html>

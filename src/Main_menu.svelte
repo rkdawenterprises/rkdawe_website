@@ -1,30 +1,33 @@
-<script lang="ts">
-	export let name: string;
-</script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<script>
+	let value = 'world'
+	let submit = false
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 500px;
-		margin: 0 auto;
+	console.log( "testing" );
+
+	const handleSubmit = () => {
+		submit = true
+		console.log( submit );
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+	const handleKeyup = () => {
+		submit = false
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
+		if (event.code == 'Enter') {
+			event.preventDefault()
+			event.target.value
+			value = event.target.value
+			return false
 		}
 	}
-</style>
+</script>
+
+<form on:submit|preventDefault={handleSubmit}>
+	<input type="text" on:keyup|preventDefault={handleKeyup}>
+	<button type="submit">
+		Submit
+	</button>
+</form>
+
+{submit}
+<h1>Hello {value}!</h1>
