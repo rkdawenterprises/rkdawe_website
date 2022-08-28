@@ -4,6 +4,7 @@
 *
 {
     margin: 0;
+    padding: 0;
 }
 
 body
@@ -38,6 +39,12 @@ body
     left: 0;
     right: 0;
     margin: auto;
+}
+
+.content .material-icons-outlined
+{
+    vertical-align: middle;
+    font-size: 1.25em;
 }
 
 .footer .copyright

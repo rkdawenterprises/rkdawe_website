@@ -1,2 +1,6 @@
-# rkdawe_website
-A mixture of javascript, typescript, HTML, svelte, and Tomcat server components.
+# RKDAWE Website
+A mixture of typescript, HTML, bootstrap, and svelte in a mostly modular way.
+
+# License
+Copyright 2019-2022 RKDAW Enterprises and Ralph Williamson
+Licensed under the Apache License, Version 2.0 (the "License")
