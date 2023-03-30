@@ -76,7 +76,8 @@
             {
                 const response_JSON: JSON = await response.json();
                 const response_JSON_as_string = JSON.stringify( response_JSON, null, 4 );
-                const authenticate_POST_response: Authenticate_POST_response = JSON.parse( response_JSON_as_string );
+                const authenticate_POST_response: Authenticate_POST_response =
+                    JSON.parse( response_JSON_as_string );
 
                 // log( `Login form post response:\n ${response_JSON_as_string}` );
 
@@ -107,7 +108,8 @@
             if( response.ok )
             {
                 const response_JSON: JSON = await response.json();
-                const authenticate_GET_response: Authenticate_GET_response = JSON.parse( JSON.stringify( response_JSON ) );
+                const authenticate_GET_response: Authenticate_GET_response =
+                    JSON.parse( JSON.stringify( response_JSON ) );
 
                 do_form_post( form_element, authenticate_GET_response );
             }

@@ -16,6 +16,7 @@
                 <a href="index.html"><img class="header" src="images/site_banner.png" alt="Site banner"></a>
             </div>
         </div>
+        <a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py"><div style="height: 0px; width: 0px;"></div></a>
     </div>
 </header>
 

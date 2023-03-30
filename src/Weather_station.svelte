@@ -6,6 +6,7 @@
 
     interface Weather_data
     {
+        systme_name: string;
         time: string;
 
         /**

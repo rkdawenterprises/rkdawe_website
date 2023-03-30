@@ -1,0 +1,27 @@
+The URL of your honey pot page is:
+
+https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py
+The final required step before you begin catching harvesters is to link as many of your existing pages as possible to the new honey pot page. Ideally, you should include links that harvesters can find, but humans are unlikely to visit.
+
+To help you with that, here are several suggestions for links to your honey pot page that will catch many harvesters, but not seen by most human visitors to your site. You should include one or more of the lines of HTML like the examples below in as many of your actual pages as you can. You can mix and match different link formats on different pages in order to fool even clever harvesters.
+
+<a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py"><!-- night --></a>
+
+<a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py"><img src="night.gif" height="1" width="1" border="0"></a>
+
+<a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py" style="display: none;">night</a>
+
+<div style="display: none;"><a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py">night</a></div>
+
+<a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py"></a>
+
+<!-- <a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py">night</a> -->
+
+<div style="position: absolute; top: -250px; left: -250px;"><a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py">night</a></div>
+
+<a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py"><span style="display: none;">night</span></a>
+
+<a href="https://rkdawenterprises.ddns.net/cgi-bin/departuregradual.py"><div style="height: 0px; width: 0px;"></div></a>
+Typically, our users insert one or more of the above lines of HTML somewhere on their existing web pages. Again, try different link formats on different pages to ensure you catch as many harvesters as possible. You're welcome to experiment with other ways of including links from your website's regular pages to your honey pot page.
+
+You may also want to protect the real email addresses contained on your website. For information on how to keep harvesters from harvesting your real email visitors, visit our instruction page (https://www.projecthoneypot.org/how_to_avoid_spambots.php).
