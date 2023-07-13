@@ -16,8 +16,6 @@
 
     export let weather_station_handler = () => {}
 
-    export let weather_history_handler = () => {}
-
     let login_html = "Log in";
 
     interface Get_Logged_in_GET_response
@@ -78,9 +76,6 @@
             {/if}
             <button on:click={weather_station_handler} type="button" class="buttons" aria-controls="weather_station" aria-label="Weather Station" title="Weather Station">
                 <span class="material-icons-outlined icons">water_drop</span><span class="labels">Weather Station</span>
-            </button>
-            <button on:click|preventDefault={weather_history_handler} type="button" class="buttons" aria-controls="weather_history" aria-label="Weather History" title="Weather History">
-                <span class="material-icons-outlined icons">thermostat</span><span class="labels">Weather History</span>
             </button>
         </div>
     </div>

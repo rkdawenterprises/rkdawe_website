@@ -80,13 +80,6 @@
         sidebar_offcanvas.hide();
         showing = "weather_station";
     }
-
-    let weather_history_URI = "rkdaweapi/weather_station_history";
-    let weather_history_handler = () =>
-    {
-        sidebar_offcanvas.hide();
-        window.open( weather_history_URI );
-    }
 </script>
 
 <main class="container-fluid">
@@ -97,7 +90,6 @@
         login_dialog_handler = { login_dialog_handler }
         logout_handler = { logout_handler }
         weather_station_handler = { weather_station_handler }
-        weather_history_handler = { weather_history_handler }
         get_logged_in_URI = "rkdaweapi/get_logged_in">
     </Sidebar>
 
