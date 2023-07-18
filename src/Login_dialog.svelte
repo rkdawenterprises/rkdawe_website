@@ -180,7 +180,7 @@
 <login_dialog>
     <div class="modal fade" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content" on:click={ hide_message }>
+            <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title">Log In</h2>
                     <button on:click={close_login_dialog_click_handler} type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

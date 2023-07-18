@@ -5,6 +5,7 @@
     import Sidebar from './Sidebar.svelte'
     import Login_dialog from './Login_dialog.svelte'
     import Weather_station from './Weather_station.svelte'
+    import Weather_station_donna_app_info from './Weather_station_donna_app_info.svelte'
     import { log } from "./utilities";
 
     /**
@@ -80,6 +81,13 @@
         sidebar_offcanvas.hide();
         showing = "weather_station";
     }
+
+    let weather_station_donna_app_info = null;
+    let weather_station_donna_app_info_handler = () =>
+    {
+        sidebar_offcanvas.hide();
+        showing = "weather_station_donna_app_info";
+    }
 </script>
 
 <main class="container-fluid">
@@ -90,6 +98,7 @@
         login_dialog_handler = { login_dialog_handler }
         logout_handler = { logout_handler }
         weather_station_handler = { weather_station_handler }
+        weather_station_donna_app_info_handler = { weather_station_donna_app_info_handler }
         get_logged_in_URI = "rkdaweapi/get_logged_in">
     </Sidebar>
 
@@ -103,6 +112,10 @@
             <Weather_station bind:this={ weather_station }
                 weather_station_data_URI = "rkdaweapi/weather_station_data">
             </Weather_station>
+        {:else if showing === "weather_station_donna_app_info"}
+            <Weather_station_donna_app_info bind:this={ weather_station_donna_app_info }
+                weather_station_donna_app_info_URI = "rkdaweapi/weather_station_donna_app_info">
+            </Weather_station_donna_app_info>
         {:else}
             <p>This page is under construction as of <span class="todays-date"></span>. Please come back soon! <span class="material-icons-outlined">sentiment_satisfied</span></p>
         { /if }

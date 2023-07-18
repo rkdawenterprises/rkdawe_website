@@ -16,6 +16,8 @@
 
     export let weather_station_handler = () => {}
 
+    export let weather_station_donna_app_info_handler = () => {}
+
     let login_html = "Log in";
 
     interface Get_Logged_in_GET_response
@@ -76,6 +78,9 @@
             {/if}
             <button on:click={weather_station_handler} type="button" class="buttons" aria-controls="weather_station" aria-label="Weather Station" title="Weather Station">
                 <span class="material-icons-outlined icons">water_drop</span><span class="labels">Weather Station</span>
+            </button>
+            <button on:click={weather_station_donna_app_info_handler} type="button" class="buttons" aria-controls="weather_station_donna_app_info" aria-label="Weather Station Donna App Info" title="Weather Station Donna App Info">
+                <img src="images/weather_station_donna_app_24.png" alt="Weather Station Donna App"><span class="labels">WS Donna App Info</span>
             </button>
         </div>
     </div>

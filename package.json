@@ -8,28 +8,28 @@
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "clean": "rm -rvf public/build/*",
-    "deploy": "rm -rvf /var/www/localhost/public/* && cp -rv public/. /var/www/localhost/public/",
-    "build_deploy": "rollup -c && rm -rvf /var/www/localhost/public/* && cp -rv public/. /var/www/localhost/public/",
+    "deploy": "rm -rvf /var/www/localhost/html/* && cp -rv public/. /var/www/localhost/html/",
+    "build_deploy": "rollup -c && rm -rvf /var/www/localhost/html/* && cp -rv public/. /var/www/localhost/html/",
     "deps": "npm outdated | awk 'NR>1 {print $1\"@\"$4}' | xargs npm install"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.4",
-    "@tsconfig/svelte": "^3.0.0",
-    "rollup": "^2.78.1",
-    "rollup-plugin-css-only": "^3.1.0",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@tsconfig/svelte": "^5.0.0",
+    "rollup": "^3.26.3",
+    "rollup-plugin-css-only": "^4.3.0",
     "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-svelte": "^7.1.6",
     "sirv-cli": "^2.0.2",
-    "svelte": "^3.49.0",
-    "svelte-check": "^2.8.1",
-    "svelte-preprocess": "^4.10.7",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.6",
+    "svelte-preprocess": "^5.0.4",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "jsencrypt": "^3.2.1"
+    "jsencrypt": "^3.3.2"
   }
 }
