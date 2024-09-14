@@ -2,10 +2,14 @@
 import Main from './Main.svelte';
 import { log, todays_date } from './utilities';
 
+/// <reference types="node" />
+
 /// <reference types="bootstrap" />
 declare var bootstrap: any;
 
-const main = new Main( { target: document.getElementById( "main" ), props: { bootstrap: bootstrap } } );
+let main_target = document.getElementById( "main" );
+const main: Main | null = (main_target == null) ? null :
+    new Main( { target: main_target, props: { bootstrap: bootstrap} } );
 
 export default main;
 
@@ -28,7 +32,6 @@ document.addEventListener( 'readystatechange', ( event: Event ) =>
 
 window.addEventListener( 'load', ( event: Event ) =>
 {
-    log( "+load" );
     todays_date();
 } );
 

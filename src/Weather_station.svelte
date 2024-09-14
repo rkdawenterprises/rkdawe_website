@@ -146,6 +146,12 @@
         month_low_humidity: number;
         year_hi_humidity: number;
         year_low_humidity: number;
+
+        /*
+        * Forecast data
+        */
+        period_1_forecast_icon: string;
+        period_1_short_forecast: string;
     }
 
     interface Get_Weather_station_data_GET_response
@@ -163,7 +169,7 @@
             {
                 if ( !response.ok )
                 {
-                    throw new Error( "Could not get weather data from server" );
+                    throw new Error( `Could not get weather data from server: ${response.statusText}` );
                 }
 
                 return response.json();

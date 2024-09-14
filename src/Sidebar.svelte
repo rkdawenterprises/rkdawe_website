@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { log } from "./utilities";
+    import { log, log_object_name } from "./utilities";
 
     export let get_logged_in_URI: string;
 
     export function get_offcanvas()
     {
-        return document.querySelector( ".offcanvas" );
+        return offcanvas_element;
     }
 
     export let close_sidebar_handler = () => {}
@@ -14,11 +14,15 @@
 
     export let logout_handler = () => {}
 
+    export let initialize_weather_station_handler = () => {}
+
     export let weather_station_handler = () => {}
 
     export let weather_station_donna_app_info_handler = () => {}
 
     let login_html = "Log in";
+
+    let offcanvas_element: HTMLDivElement;
 
     interface Get_Logged_in_GET_response
     {
@@ -36,13 +40,14 @@
             {
                 throw new Error( "Could not get logged in status" );
             }
-
             return response.json()
         } )
         .then( ( data: any ) =>
         {
-            const get_Logged_in_GET_response: Get_Logged_in_GET_response = JSON.parse( JSON.stringify( data ) );
-            if( get_Logged_in_GET_response.success === "true" && get_Logged_in_GET_response.logged_in === "true" )
+            const get_Logged_in_GET_response: Get_Logged_in_GET_response =
+                JSON.parse( JSON.stringify( data ) );
+            if( (get_Logged_in_GET_response.success === "true")
+                && (get_Logged_in_GET_response.logged_in === "true") )
             {
                 login_html = "Log out";
             }
@@ -60,7 +65,10 @@
 </script>
 
 <sidebar>
-    <div id="sidebar_offcanvas" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="sidebar_menu_label">
+    <div class="offcanvas offcanvas-start"
+         tabindex="-1"
+         aria-labelledby="sidebar_menu_label"
+         bind:this={offcanvas_element}>
         <div class="offcanvas-header">
             <button on:click={close_sidebar_handler} type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -76,6 +84,9 @@
                     <span class="material-icons icons">logout</span><span class="labels" contenteditable="false" bind:innerHTML={login_html}></span>
                 </button>
             {/if}
+            <button on:click={initialize_weather_station_handler} type="button" class="buttons" aria-controls="initialize_weather_station" aria-label="Initialize Weather Station" title="Initialize Weather Station">
+                <span class="material-symbols-outlined icons">device_reset</span><span class="labels">Initialize Weather Station</span>
+            </button>
             <button on:click={weather_station_handler} type="button" class="buttons" aria-controls="weather_station" aria-label="Weather Station" title="Weather Station">
                 <span class="material-icons-outlined icons">water_drop</span><span class="labels">Weather Station</span>
             </button>
@@ -87,7 +98,7 @@
 </sidebar>
 
 <style>
-    #sidebar_offcanvas .buttons
+    .offcanvas .buttons
     {
         padding: 0.5rem;
         transform: none;
@@ -98,12 +109,12 @@
         transition-duration: 0.4s;
     }
 
-    #sidebar_offcanvas .buttons:hover
+    .offcanvas .buttons:hover
     {
         background-color: #4CAF50;
     }
 
-    #sidebar_offcanvas .icons
+    .offcanvas .icons
     {
         margin: 0.25rem;
         padding: 0;
@@ -117,24 +128,24 @@
         font-size: 1.75rem;
     }
 
-    #sidebar_offcanvas .labels
+    .offcanvas .labels
     {
         margin: 0.25rem;
         vertical-align: middle;
         font-size: 1.1rem;
     }
 
-    #sidebar_offcanvas
+    .offcanvas
     {
-        width: 15rem;
+        width: 20rem;
     }
 
-    #sidebar_offcanvas .offcanvas-header
+    .offcanvas .offcanvas-header
     {
         padding: 1rem;
     }
 
-    #sidebar_offcanvas .offcanvas-body
+    .offcanvas .offcanvas-body
     {
         padding: 0.5rem;
     }
