@@ -2,7 +2,7 @@
 
 <footer>
     <div class=footer>
-        <p>Copyright <span class="material-icons copyright">copyright</span> 2023 RKDAW Enterprises</p>
+        <p>Copyright <span class="material-icons copyright">copyright</span> 2023-2024 RKDAW Enterprises and Ralph Williamson</p>
         <a href="http://www.projecthoneypot.org?rf=123750">
             <img src="images/project_honey_pot_button.gif" height="31px" width="88px" 
             alt="Stop Spam Harvesters, Join Project Honey Pot">

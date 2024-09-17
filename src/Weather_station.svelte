@@ -9,7 +9,7 @@
         system_name: string;
         time: string;
 
-        /**
+        /*
          * Station information acquired during configuration.
          */
         wrd: number;
@@ -22,7 +22,7 @@
         firmware_version: string;
         DID: string;
 
-        /**
+        /*
          * Measurement units
          */
         barometer_units: string;
@@ -34,7 +34,7 @@
         rain_rate_units: string;
         bar_trend: string;
 
-        /**
+        /*
          * Loop2 packet data.
          */
         barometer: number;
@@ -60,7 +60,7 @@
         daily_et: number;
         last_twenty_four_hour_rain: number;
 
-        /**
+        /*
          * Loop packet data.
          */
         month_rain: number;
@@ -69,7 +69,7 @@
         console_battery_voltage: number;
         console_battery_voltage_units: string;
 
-        /**
+        /*
          * HILOWS packet data.
          */
         daily_low_barometer: number;
@@ -148,8 +148,11 @@
         year_low_humidity: number;
 
         /*
-        * Forecast data
-        */
+         * Forecast data
+         */
+        forecast_location_coordinates: string;
+        forecast_location_city: string;
+        forecast_location_state: string;
         period_1_forecast_icon: string;
         period_1_short_forecast: string;
     }
@@ -164,7 +167,29 @@
 
     function update_weather_data()
     {
-        fetch( weather_station_data_URI )
+        if( "geolocation" in navigator )
+        {
+            navigator.geolocation.getCurrentPosition( ( position ) =>
+            {
+                let data_URI: string =
+                    `${weather_station_data_URI}?forecast_location=${position.coords.latitude},${position.coords.longitude}`;
+                update_weather_data_html( encodeURI( data_URI ) );
+            },
+            ( error ) =>
+            {
+                log( `Couldn't get users location. Error code: ${error.code}, message: ${error.message}.` );
+                update_weather_data_html( weather_station_data_URI );
+            } );
+        }
+        else
+        {
+            update_weather_data_html( weather_station_data_URI );
+        }
+    }
+
+    function update_weather_data_html(data_URI: string)
+    {
+        fetch( data_URI )
             .then( ( response: Response ) =>
             {
                 if ( !response.ok )
